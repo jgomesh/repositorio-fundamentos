@@ -1,10 +1,44 @@
-h1,p{
-    text-align: center;
+div:hover{
+    border:20px solid black;
 }
-.item-lista:hover{
-    background-color: blue;
+div:nth-child(3){
+
+    background-color: red;
 }
-ul,ol{
-    list-style: none;
-    text-align: center;
+div:nth-child(4){
+    background-color: rgb(240, 236, 24);
+}
+div:nth-child(5){
+    background-color: rgb(81, 255, 0);
+    height: 100px;
+}
+div:nth-child(6){
+    background-color: rgb(0, 26, 255);
+}
+div:nth-child(7){
+    background-color: rgb(234, 0, 255);
+}
+div:nth-child(3) h3{
+    color: azure;
+}
+
+div:nth-child(4) h3{
+    color: rgb(45, 212, 212);
+}
+
+div:nth-child(5) h3{
+    color: rgb(180, 23, 228);
+}
+
+div:nth-child(6) h3{
+    color: rgb(214, 12, 12);
+}
+
+div:nth-child(7) h3{
+    color: rgb(214, 211, 12);
+}
+div:nth-child(odd) h3{
+    font-size: 40px;
+    font-style: italic;
+
 }
