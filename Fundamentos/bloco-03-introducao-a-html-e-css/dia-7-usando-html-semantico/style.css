@@ -1,0 +1,53 @@
+h1 {
+    text-align: center;
+  }
+  ul li{
+    list-style: none;
+  }
+body{
+  background-color: rgb(190, 105, 105);
+}
+  .first {
+    background-color: rgb(235, 200, 84);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    position: absolute;
+    left: 400px;
+    top:100px
+  }
+
+  .second {
+    background-color: rgb(219, 219, 219);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    top:150px;
+    left:200px;
+  }
+
+  .third {
+    background-color: rgb(170, 142, 106);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    position:absolute;
+    top:150px;
+    left:500px;
+
+  }
+  .cabecalho{
+    position: absolute;
+    top:10px;
+    left: 370px
+  }
+  .conteudo-principal{
+    position: absolute;
+    top:250px;
+    left:340px;
+  }
+
