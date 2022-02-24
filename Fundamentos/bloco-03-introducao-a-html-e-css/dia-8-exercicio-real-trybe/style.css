@@ -1,0 +1,46 @@
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid black;
+    padding-left: 10px;
+}
+body{
+    margin:0;
+    padding: 0;
+}
+h1{
+    margin:20px;
+    font-size: 10px;
+    display: inline;
+}
+h2{
+    margin-left: 50px;
+    font-size: 15px;
+}
+ul,p{
+    font-size: 10px;
+}
+ul.ul_cabecalho li{
+    display: inline;
+    margin: 10px;
+}
+.ul_cabecalho{
+    margin:20px;
+}
+.imagem_camarao{
+    width:100px;
+    height: 50px;
+    margin:10px;
+    border-radius: 20px;
+}
+.imagem-e-conteudo1{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+}
+p{
+    margin-left: 40px;  
+}
+main{
+    margin-top: 40px;
+}
