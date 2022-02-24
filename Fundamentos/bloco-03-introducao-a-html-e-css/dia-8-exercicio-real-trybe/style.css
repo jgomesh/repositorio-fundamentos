@@ -20,6 +20,14 @@ h2{
 ul,p{
     font-size: 10px;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+ul.ul_cabecalho li:nth-child(1){
+    border-bottom: 2px solid black;
+
+}
 ul.ul_cabecalho li{
     display: inline;
     margin: 10px;
@@ -39,8 +47,57 @@ ul.ul_cabecalho li{
     flex-direction: row;
 }
 p{
+    width: 100%;
+    height: 100%;
     margin-left: 4px;  
 }
 main{
     margin-top: 40px;
+}
+.imagem_camarao2{
+    width:100px;
+    height: 50px;
+    margin:10px;
+    border-radius: 20px;
+}
+.referencias ul li{
+    list-style: none;
+    font-size: 8px;
+    color: rgb(109, 107, 107);
+}
+.referencias{
+    text-align:center;
+    border-bottom: 2px solid black;
+}
+
+.teste-botao{
+
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    margin-top: 10px;
+    background-color: rgb(114, 109, 119);
+    padding:5px 8px;
+    border-radius: 25px;
+    
+}
+.teste-botao:hover{
+    background-color: rgb(49, 47, 47);
+}
+.teste-div{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+h2{
+    border-top: 2px solid rgb(119, 119, 119);
+    width: 500px;
+}
+.rodape-conteudo{
+    font-size: 8px;
+    padding: 5px;
+    margin: 5px;
+
+}
+.rodape{
+    text-align:right;
+    font-style: italic;
 }
