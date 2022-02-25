@@ -1,5 +1,7 @@
         /* CONFIGURAÇÕES GERAIS */
-
+*{
+    margin:0;
+}
 body{
     margin:0;
     padding: 0;
@@ -27,8 +29,8 @@ h1{
       
 .sidebar{
     border-right: grey;
-background-color: rgb(136, 131, 131);
-    height: 638px;
+    background-color: rgb(136, 131, 131);
+    height: 892px;
     float: left;
     border-radius: 25px;
 }
@@ -46,13 +48,27 @@ a{
     color: black;
 }
         /* AREA CONTEUDO */
-.conteudo-real{
- 
-
+.avatar {
+    float: left;
+    width:100px;
+    height: 80px;
+    margin: 25px;
+    border-radius: 20px;
+    background-color: #D6E9FE;
+    }
+.comment {
+margin: 10px;
+    overflow:hidden;
 }
 
+table{
+    margin:20px;
+}
+h3{
+    padding-top: 20px;
+}
 h2{
-    padding: 20px;
+    padding: 40px;
     margin-left: 50px;
     font-size: 15px;
 }
@@ -73,17 +89,12 @@ table{
 }
 
 .imagem_camarao{
+    float: left;
     width:100px;
     height: 50px;
     margin:10px;
     border-radius: 20px;
 }
-.imagem-e-conteudo1{
-    margin-left: 100px;
-    display: flex;
-    flex-direction: row;
-}
-
 .imagem_camarao2{
     width:100px;
     height: 50px;
