@@ -1,0 +1,129 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+/* CONTEÚDO PRINCIPAL */
+        .conteudo_principal{
+            padding:30px;
+        background-size: cover;
+        background-attachment: fixed;
+        background-image:url(./trybe-sorrindo.jpg);
+        background-position: 50% 25%;
+        }
+        .conteudo_principal h1{
+            font-family: monospace;
+            font-size: 28px;
+            text-align: left;
+            color:#2fc18c;
+            max-width: 450px;
+            margin-bottom: 30px;
+        }
+        .conteudo_principal p{
+            font-size: 15px;
+            max-width: 40%;
+            margin-bottom: 30px;
+        }
+        .button{
+            padding: 10px;
+            background-color: #2fc18c;
+            border-radius: 10px;
+            color: white;
+        }
+        .button:hover{
+            background-color: #5c8f7c;
+        }
+
+/* INTRODUÇAO TRYBE */
+        .introducao_trybe{
+            max-width: 60%;
+            margin:auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .introducao_trybe h1{
+            color:#2fc18c;
+        margin-bottom: 50px;
+        font-family: monospace;
+        }
+        .introducao_trybe p{
+            margin-bottom: 50px;
+        }
+
+/* PARTE DOS ALUNOS */
+        .imagem-aluno1{
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            margin:auto;
+        }
+
+
+        .alunos-trybe{
+            margin-left: 1.8%;
+            margin-top:50px;
+            max-width: 30%;
+            display: inline-block;
+            text-align: center;
+        }
+        .alunos-trybe h1{
+            font-family: monospace;
+            font-size: 20px;
+            color:#2fc18c;
+            margin-bottom: 30px;
+        }
+        .alunos-trybe p {
+            max-width: 70%;
+            margin: auto;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        .nacionalidade-estudante{
+            color:#2fc18c;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: monospace;
+        }
+/* PARTE DOS CEOS  */
+.imagem-CEO{
+    padding: 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    margin:auto;
+}
+.CEOS_trybe{
+    
+    margin: auto;
+    text-align: center;
+}
+.CEOS_trybe h1{
+    font-family: monospace;
+    font-size: 20px;
+    color:#101312;
+    padding: 20px;
+
+}
+.CEOS_trybe p{
+    padding: 10px;
+}
+.CEO_trybe{
+    margin-right:10px ;
+    box-shadow: 4px 4px 10px black;
+    margin-top: 150px;
+    display: inline-block;
+    max-width: 35%;
+    border: 0.5px solid black;
+    text-align: left;
+    margin-bottom: 50px;
+}
+.nacionalidade-CEO{
+    color:#000000;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: monospace;
+}
