@@ -30,6 +30,7 @@ h1{
 .sidebar{
     border-right: grey;
     background-color: rgb(136, 131, 131);
+    margin-right: 20px;
     height: 892px;
     float: left;
     border-radius: 25px;
