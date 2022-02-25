@@ -3,8 +3,6 @@
     margin: 0;
 }
 .cabecalho{
-    display: flex;
-    flex-direction: row;
     border-bottom: 2px solid black;
     padding-left: 10px;
 }
@@ -28,8 +26,8 @@ a{
     text-decoration: none;
     color: black;
 }
-ul.ul_cabecalho li:nth-child(1){
-    border-bottom: 2px solid black;
+ul.ul_cabecalho li:nth-child(2){
+    border-bottom: 2px solid rgb(237, 17, 17);
 
 }
 ul.ul_cabecalho li{
@@ -38,6 +36,7 @@ ul.ul_cabecalho li{
 }
 .ul_cabecalho{
     margin:20px;
+    text-align: justify;
 }
 .imagem_camarao{
     width:100px;
@@ -52,6 +51,7 @@ ul.ul_cabecalho li{
     display: flex;
     flex-direction: row;
 }
+.titulo-cabecalho{}
 p{
     width: 100%;
     height: 100%;
@@ -128,4 +128,8 @@ td{
 }
 .container-subtitulo{
     margin: 20px;
+}
+.teste3{
+    display: inline-block;
+    float: right;
 }
