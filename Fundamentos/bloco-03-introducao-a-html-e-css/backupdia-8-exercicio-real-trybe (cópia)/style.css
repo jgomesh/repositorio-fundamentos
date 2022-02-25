@@ -1,77 +1,43 @@
-        /* CONFIGURAÇÕES GERAIS */
-
+*{
+    padding:0;
+    margin: 0;
+}
+.cabecalho{
+    border-bottom: 2px solid black;
+    padding-left: 10px;
+}
 body{
     margin:0;
     padding: 0;
 }
-        /* AREA DO MENU */
-.cabecalho{
-padding-top:10px ;
-    text-align:justify;
-
-    border-bottom: 2px solid black;
-    padding-left: 10px;
-    height: 30px;
-}
-
-ul.ul_cabecalho li{   
-    margin: 10px;
-    list-style: none;
-}
 h1{
     margin:20px;
-    font-size: 20px;
+    font-size: 10px;
     display: inline;
 }
-        /* AREA DA SIDEBAR */
-      
-.sidebar{
-    border-right: grey;
-background-color: rgb(136, 131, 131);
-    height: 638px;
-    float: left;
-    border-radius: 25px;
+h2{
+    margin-left: 50px;
+    font-size: 15px;
 }
-.sidebar ul li:nth-child(1){
-    border-top: 2px solid black;
-    width: 20px;
-}
-ul li a{
-    display: block;
-    font-size: 18px;
-    margin-bottom: 200px;
+ul,p{
+    font-size: 10px;
 }
 a{
     text-decoration: none;
     color: black;
 }
-        /* AREA CONTEUDO */
-.conteudo-real{
- 
+ul.ul_cabecalho li:nth-child(2){
+    border-bottom: 2px solid rgb(237, 17, 17);
 
 }
-
-h2{
-    padding: 20px;
-    margin-left: 50px;
-    font-size: 15px;
+ul.ul_cabecalho li{
+    display: inline;
+    margin: 10px;
 }
-p{
-    font-size: 12px;
-    margin-left: 4px;  
+.ul_cabecalho{
+    margin:20px;
+    text-align: justify;
 }
-.ultima{
-    border-bottom: 2px solid grey;
-    margin: 0;
-}
-table{
-    position: relative;
-    left: 50px;
-    text-align: center;
-    align-self: center;
-    border: 1px solid black;
-}
-
 .imagem_camarao{
     width:100px;
     height: 50px;
@@ -80,20 +46,29 @@ table{
 }
 .imagem-e-conteudo1{
     margin-left: 100px;
+    margin-top: 10px;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
 }
-
+.titulo-cabecalho{}
+p{
+    width: 100%;
+    height: 100%;
+    margin-left: 4px;  
+}
+main{
+    margin-top: 40px;
+}
 .imagem_camarao2{
     width:100px;
     height: 50px;
+    margin:10px;
     border-radius: 20px;
 }
-
-/* AREA BOTAO E REFERENCIAS */
 .referencias ul li{
     list-style: none;
-    font-size: 15px;
+    font-size: 8px;
     color: rgb(109, 107, 107);
 }
 .referencias{
@@ -104,7 +79,7 @@ table{
 .teste-botao{
 
     color: rgb(242, 240, 240);
-    font-size: 15px;
+    font-size: 10px;
     margin-top: 10px;
     background-color: rgb(142, 76, 208);
     padding:5px 8px;
@@ -122,9 +97,8 @@ h2{
     border-top: 2px solid rgb(119, 119, 119);
     width: 500px;
 }
-/* CONTEUDO RODAPE */
 .rodape-conteudo{
-    font-size: 15px;
+    font-size: 8px;
     padding: 5px;
     margin: 5px;
 
@@ -132,7 +106,13 @@ h2{
 .rodape{
     text-align:center;
     font-style: italic;
-   margin: 20px;
+}
+table{
+    position: relative;
+    left: 50px;
+    text-align: center;
+    align-self: center;
+    border: 1px solid black;
 }
 td{
     border: 1px solid black;
@@ -146,4 +126,12 @@ td{
     font-size: 12px;
     padding: 0;
 }
+.container-subtitulo{
+    margin: 20px;
+}
+.teste3{
+    display: inline-block;
+    float: right;
+}
+
 
