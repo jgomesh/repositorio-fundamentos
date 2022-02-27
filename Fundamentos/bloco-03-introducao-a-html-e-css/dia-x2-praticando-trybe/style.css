@@ -10,6 +10,7 @@
         background-attachment: fixed;
         background-image:url(./trybe-sorrindo.jpg);
         background-position: 50% 25%;
+        
         }
         .conteudo_principal h1{
             font-family: monospace;
@@ -61,11 +62,16 @@
             margin:auto;
         }
 
-
+        .alunos-da-trybe{
+            margin-left: 12%;
+            margin-right: 10%;
+           
+        }
         .alunos-trybe{
-            margin-left: 1.8%;
-            margin-top:50px;
-            max-width: 30%;
+            margin-left: 50px;
+            vertical-align: top;
+            
+            max-width: 25%;
             display: inline-block;
             text-align: center;
         }
@@ -142,7 +148,7 @@
     text-align: center;
 }
 .foto-final-page{
-    
+    margin-right: 50px;
     width: 250px;
     height: 250px;
 }
@@ -154,11 +160,15 @@
     max-width: 300px;
 
 }
-.lista li{
+.lista{
     letter-spacing: 1px;
-    margin-bottom:30px ;
+    vertical-align:top;
+   
 }
-.container-final{
-    vertical-align: center;
+.lista li{
+    margin-bottom: 29px;
 }
 
+.color{
+    color: rgb(110, 110, 110);
+}
