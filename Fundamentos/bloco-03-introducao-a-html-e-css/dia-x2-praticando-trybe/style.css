@@ -1,15 +1,17 @@
 
-*{
-    margin:0;
-    padding:0;
-}
+        *{
+            margin:0;
+            padding:0;
+        }
 /* CONTEÚDO PRINCIPAL */
         .conteudo_principal{
-            padding:30px;
+            padding-top:50px;
+            padding-left: 50px;
         background-size: cover;
         background-attachment: fixed;
         background-image:url(./trybe-sorrindo.jpg);
         background-position: 50% 25%;
+        height: 500px;
         
         }
         .conteudo_principal h1{
@@ -17,13 +19,13 @@
             font-size: 28px;
             text-align: left;
             color:#2fc18c;
-            max-width: 450px;
-            margin-bottom: 30px;
+            max-width: 600px;
+            margin-bottom: 80px;
         }
         .conteudo_principal p{
             font-size: 15px;
-            max-width: 40%;
-            margin-bottom: 30px;
+            max-width: 600px;
+            margin-bottom: 80px;
         }
         .button{
             padding: 10px;
@@ -39,17 +41,23 @@
         .introducao_trybe{
             max-width: 60%;
             margin:auto;
-            margin-top: 50px;
+          
             text-align: center;
+            height: 600px;
         }
         .introducao_trybe h1{
             color:#2fc18c;
-        margin-bottom: 50px;
+            margin-bottom: 100px;
+             padding-top:150px ;
         font-family: monospace;
         font-size: 30px;
         }
         .introducao_trybe p{
-            margin-bottom: 50px;
+            
+            max-width:300px ;
+            margin:auto;
+            padding-bottom: 120px;
+       
         }
 
 /* PARTE DOS ALUNOS */
@@ -59,23 +67,26 @@
             height: 100px;
             border-radius: 50%;
             margin-bottom: 30px;
-            margin:auto;
+           
+            
         }
 
         .alunos-da-trybe{
-            margin-left: 12%;
-            margin-right: 10%;
+            margin:auto;
+         margin-left: 16%;
            
         }
         .alunos-trybe{
-            margin-left: 50px;
-            vertical-align: top;
             
+            vertical-align: top;
+            border-top: 2px solid rgb(165, 164, 164);
+            border-bottom:2px solid rgb(165, 164, 164) ;
             max-width: 25%;
             display: inline-block;
             text-align: center;
         }
         .alunos-trybe h1{
+            margin-top: 20px;
             font-family: monospace;
             font-size: 20px;
             color:#2fc18c;
@@ -86,6 +97,7 @@
             margin: auto;
             font-size: 14px;
             margin-top: 30px;
+            margin-bottom: 30px;
         }
         .nacionalidade-estudante{
             color:#2fc18c;
@@ -94,81 +106,81 @@
             font-family: monospace;
         }
 /* PARTE DOS CEOS  */
-.imagem-CEO{
-    padding: 20px;
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 30px;
-    margin:auto;
-}
-.CEOS_trybe{
-    
-    margin: auto;
-    text-align: center;
-}
-.CEOS_trybe h1{
-    font-family: monospace;
-    font-size: 20px;
-    color:#101312;
-    padding: 20px;
-
-}
-.CEOS_trybe p{
-    padding: 10px;
-}
-.CEO_trybe{
-    margin-right:10px ;
-    box-shadow: 4px 4px 10px black;
-    margin-top: 150px;
-    display: inline-block;
-    max-width: 35%;
-    border: 0.5px solid black;
-    text-align: left;
-    margin-bottom: 50px;
-}
-.nacionalidade-CEO{
-    color:#000000;
-            text-transform: uppercase;
-            font-weight: 600;
+        .imagem-CEO{
+            padding: 20px;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            margin:auto;
+        }
+        .CEOS_trybe{
+            
+            margin: auto;
+            text-align: center;
+        }
+        .CEOS_trybe h1{
             font-family: monospace;
-}
+            font-size: 20px;
+            color:#101312;
+            padding: 20px;
+
+        }
+        .CEOS_trybe p{
+            padding: 10px;
+        }
+        .CEO_trybe{
+            margin-right:10px ;
+            box-shadow: 4px 4px 10px black;
+            margin-top: 150px;
+            display: inline-block;
+            max-width: 35%;
+            border: 0.5px solid black;
+            text-align: left;
+            margin-bottom: 50px;
+        }
+        .nacionalidade-CEO{
+            color:#000000;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-family: monospace;
+        }
 
 /* ULTIMA SESSAO */
-.titulo-final{
-    text-align: center;
-    color:#2fc18c;
-    font-family: monospace;
-    font-size: 30px;
-    margin: 40px;
-}
-.lista-e-foto{
-    
-    text-align: center;
-}
-.foto-final-page{
-    margin-right: 50px;
-    width: 250px;
-    height: 250px;
-}
-.lista{
-    display: inline-block;
-    text-align: left;
-    margin-left: 30px;
-    font-size: 19.5px;
-    max-width: 300px;
+        .titulo-final{
+            text-align: center;
+            color:#2fc18c;
+            font-family: monospace;
+            font-size: 30px;
+            margin: 40px;
+        }
+        .lista-e-foto{
+            
+            text-align: center;
+        }
+        .foto-final-page{
+            margin-right: 50px;
+            width: 250px;
+            height: 250px;
+        }
+        .lista{
+            display: inline-block;
+            text-align: left;
+            margin-left: 30px;
+            font-size: 19.5px;
+            max-width: 300px;
 
-}
-.lista{
-    letter-spacing: 1px;
-    vertical-align:top;
-   
-}
-.lista li{
-    margin-bottom: 29px;
-}
+        }
+        .lista{
+            letter-spacing: 1px;
+            vertical-align:top;
+        
+        }
+        .lista li{
+            margin-bottom: 29px;
+        }
 
-.color{
-    color: rgb(110, 110, 110);
-}
+        .color{
+            color: rgb(110, 110, 110);
+        }
