@@ -1,7 +1,7 @@
 // Variáveis para calculo de lucro------------------------------------------------------
-    let valorCusto = -500;
+    let valorCusto = 500;
     let valorVenda = 1000;
-    let quantidadeVendas = 12;
+    let quantidadeVendas = 10;
 
 
 // Estrutura condicional -------------------------------------------------------
@@ -12,7 +12,7 @@
         const lucro = valorVenda - valorCustoTotal;
         const lucroTotal = quantidadeVendas * lucro;
 
-        console.log("Seu lucro foi de " + lucroTotal + "!" );
+        console.log("Seu lucro foi de " + lucroTotal + " R$ !" );
 
     }
     else {
