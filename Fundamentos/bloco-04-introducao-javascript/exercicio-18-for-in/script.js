@@ -16,4 +16,4 @@ let leitor = {
     ],
   };
   console.log("O livro favorito de " + leitor.nome + " se chama " + leitor['livrosFavoritos'][0]['titulo'])
-  console.log(leitor.name + ' tem ' + leitor['livrosFavoritos'].length + ' livros favoritos')
+  console.log(leitor.nome + ' tem ' + leitor['livrosFavoritos'].length + ' livros favoritos')
