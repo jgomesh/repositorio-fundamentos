@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sing Up</title>
+</head>
+<body>
+    <header id='cabecalho'>
+        <img src="./imagensProjetos/trybeLogo.png" alt="Logo da Trybe" class = "logo_trybe">
+        <nav class='blocos-cabecalho'>
+            <ul class="menu-lista">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./linkInterno/index.html">PROJETOS</a></li>
+                <li><a href="./index.html">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form action="" method="GET" enctype="multipart/form-data">
+        <div id="form-viagem">
+            <p class="viagem-paragrafo">E-mail:</p>
+            <input type="text" name="user" placeholder="Digite seu e-mail" minlength="10" maxlength="40" id='user-text'autofocus required>
+            <br>
+            <p class="viagem-paragrafo">Senha:</p>    
+            <input type="password" name="senha" placeholder="Digite sua senha" minlength="10" maxlength="50" id='password-text'required>
+            <br>
+            <section id="radio-options">
+                <label for="cidade-1">
+                    <input type="radio" name="ambiente-preferido" id="cidade-1" value="cidade">Cidade
+                </label>
+                <label for="campo-1">
+                    <input type="radio" name="ambiente-preferido" id="campo-1" value="cidade">Campo
+                </label>
+                <label for="praia-1">
+                    <input type="radio" name="ambiente-preferido" id="praia-1" value="cidade">Praia
+                </label>
+                <label for="montanhas-1">
+                    <input type="radio" name="ambiente-preferido" id="montanhas-1" value="cidade">Montanhas
+                </label>
+            </section>
+            <p id="textarea-paragraph">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+            <textarea name="texto" id="textarea-tag" cols="50" rows="15" maxlength="500" ></textarea>
+            <br>
+            <p class="viagem-paragrafo">Data preferida para viagem:</p>
+            <input type="date" name="data-nascimento" id="date-value">
+            <br>
+            <input type="checkbox" name="concordo-informacoes" id="checkbox-informacoes" required><p class="concordo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</p>
+            <br>
+            <input type="checkbox" name="concordo-imagens" id="checkbox-imagens" required><p class="concordo">Concordo que imagens das minhas férias poderão ser usadas na divulgação.</p>
+        </div>
+        <section id="section-buttons">
+            <button type="submit" id="entrar-button">Enviar</button>
+            <button id="delete-button">Apagar</button>
+        </section>
+    </form>
+    <footer id="rodape">
+        <em>João Otávio Gomes Hugill, 2022</em>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
