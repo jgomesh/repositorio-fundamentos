@@ -27,13 +27,17 @@ createDaysOfTheWeek();
 
 		if (dezDaysList[index] === 24 || dezDaysList[index] === 31) {
 			monthDayItem.className = 'day holiday'
+			monthDayItem.style.color = '#777'
 		}
 		else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18) {
 			monthDayItem.className = 'day friday'
+			monthDayItem.style.color = '#777'
 		}else if (dezDaysList[index] === 25) {
 			monthDayItem.className = 'day holiday friday'
+			monthDayItem.style.color = '#777'
 		}	else {
 			monthDayItem.className = 'day'
+			monthDayItem.style.color = '#777'
 		}
 
 		containerDays.appendChild(monthDayItem);
@@ -184,16 +188,16 @@ function recebeClickCor(eventoMudarCores){
 
 const divSelecionada = document.querySelector('.selected');
 const containerDayss = document.querySelectorAll('.day');
-let cor = false
+
 
 for(let i = 0;i < containerDayss.length;i += 1){
 containerDayss[i].addEventListener('click', recebeClickCorA);
 function recebeClickCorA(eventoMudarCores){
-	if( botaoClicadoCor === true && cor === false){
+	if( botaoClicadoCor === true && containerDayss[i].style.color === 'rgb(119, 119, 119)'){
 		containerDayss[i].style.color = 'green'
 		
-		cor = true;
-	}else if(botaoClicadoCor === true && cor === true){
+
+	}else if(botaoClicadoCor === true && containerDayss[i].style.color === 'green'){
 		containerDayss[i].style.color = '#777'
 		cor = false;
 	}
