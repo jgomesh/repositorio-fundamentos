@@ -19,39 +19,43 @@ window.addEventListener('DOMContentLoaded', function()
 
 
 // VALIDAÇÕES FORMULÁRIA
-const validate = new JustValidate('#form');
+window.onload = waitJs;
 
-validate
-.addField('#name', [
-    {
-      rule: 'minLength',
-      value: 11,
-    },
-    {
-      rule: 'maxLength',
-      value: 50,
-    },
-    {
+function waitJs(){
+  const validate = new JustValidate('#form');
+
+  validate
+  .addField('#name', [
+      {
+        rule: 'minLength',
+        value: 11,
+      },
+      {
+        rule: 'maxLength',
+        value: 50,
+      },
+      {
+          rule: 'required',
+          errorMessage: 'Este item é obrigatório',
+        },
+  ])
+  .addField('#email', [
+      {
         rule: 'required',
         errorMessage: 'Este item é obrigatório',
       },
-])
-.addField('#email', [
-    {
-      rule: 'required',
-      errorMessage: 'Este item é obrigatório',
-    },
-    {
-      rule: 'email',
-      errorMessage: 'Email is invalid!',
-    },
-])
-.addField('#consent_checkbox', [
-    {
-      rule: 'required',
-      errorMessage: 'Este item é obrigatório',
-    },
-]);
+      {
+        rule: 'email',
+        errorMessage: 'Email is invalid!',
+      },
+  ])
+  .addField('#consent_checkbox', [
+      {
+        rule: 'required',
+        errorMessage: 'Este item é obrigatório',
+      },
+  ]);
+}
 
 const deleteButton = document.querySelector('.delete-btn');
 let inputsGeral = document.querySelectorAll('.input-text');
