@@ -14,34 +14,35 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
+
 // PARTE QUE COLOCA OS DIAS DO MES
 
-	function createDaysOfTheMonth() {
-	const containerDays = document.querySelector('#days');
-	const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+function createDaysOfTheMonth() {
+const containerDays = document.querySelector('#days');
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-	for (let index = 0; index < dezDaysList.length;index += 1) {
-		const monthDays = dezDaysList[index];
-		const monthDayItem = document.createElement('li');
-		monthDayItem.innerHTML = monthDays;
+for (let index = 0; index < dezDaysList.length;index += 1) {
+	const monthDays = dezDaysList[index];
+	const monthDayItem = document.createElement('li');
+	monthDayItem.innerHTML = monthDays;
 
-		if (dezDaysList[index] === 24 || dezDaysList[index] === 31) {
-			monthDayItem.className = 'day holiday'
-			monthDayItem.style.color = '#777'
-		}
-		else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18) {
-			monthDayItem.className = 'day friday'
-			monthDayItem.style.color = '#777'
-		}else if (dezDaysList[index] === 25) {
-			monthDayItem.className = 'day holiday friday'
-			monthDayItem.style.color = '#777'
-		}	else {
-			monthDayItem.className = 'day'
-			monthDayItem.style.color = '#777'
-		}
-
-		containerDays.appendChild(monthDayItem);
+	if (dezDaysList[index] === 24 || dezDaysList[index] === 31) {
+		monthDayItem.className = 'day holiday'
+		monthDayItem.style.color = '#777'
 	}
+	else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18) {
+		monthDayItem.className = 'day friday'
+		monthDayItem.style.color = '#777'
+	}else if (dezDaysList[index] === 25) {
+		monthDayItem.className = 'day holiday friday'
+		monthDayItem.style.color = '#777'
+	}	else {
+		monthDayItem.className = 'day'
+		monthDayItem.style.color = '#777'
+	}
+
+	containerDays.appendChild(monthDayItem);
+}
 }
 createDaysOfTheMonth();
 
@@ -123,24 +124,22 @@ function recebeClickSexta(eventoMudarTexto){
 
 
 // PARTE QUE DA ZOOM QUANDO O MOUSE PASSO POR CIMA
-window.onload = jsCript;
 
-function jsCript(){
+const containerDays = document.querySelectorAll('#days li');
 
-	const containerDays = document.querySelectorAll('#days li');
-	for(let i = 0; i < containerDays.length;i += 1){
-		containerDays[i].addEventListener('mouseover', mousePassou)
-		function mousePassou(){
-			containerDays[i].style.fontSize ='30px'
-		}
-	}
-	for(let i = 0; i < containerDays.length;i += 1){
-	containerDays[i].addEventListener('mouseout', mouseSaiu)
-	function mouseSaiu(){
-		containerDays[i].style.fontSize ='20px'
-	}
+for(let i = 0; i < containerDays.length;i += 1){
+	containerDays[i].addEventListener('mouseover', mousePassou)
+	function mousePassou(){
+		containerDays[i].style.fontSize ='30px'
 	}
 }
+for(let i = 0; i < containerDays.length;i += 1){
+containerDays[i].addEventListener('mouseout', mouseSaiu)
+function mouseSaiu(){
+	containerDays[i].style.fontSize ='20px'
+}
+}
+
 
 // Criando tarefa
 
@@ -183,9 +182,6 @@ function recebeClickCor(eventoMudarCores){
 
 // PARTE QUE MUDA A COR DOS DIAS
 
-
-
-
 const divSelecionada = document.querySelector('.selected');
 const containerDayss = document.querySelectorAll('.day');
 
@@ -223,7 +219,6 @@ function foiClicado(){
 function clicaEnter(event) {
 	var x = event.key;
 	
-	// If the pressed keyboard button is "a" or "A" (using caps lock or shift), alert some text.
 	if (x === "Enter") { 
 		if(taskInput.value.includes('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')){
 		const criandoLi = document.createElement('li');
