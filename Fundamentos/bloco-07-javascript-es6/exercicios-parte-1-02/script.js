@@ -7,3 +7,16 @@ oddsAndEvens.sort(function(a,b){
 });
 
 console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`)
+
+let numbers = [13, 3, 4, 10, 7, 2];
+
+for (let i = 1 ; i < numbers.length ; i += 1 ){
+    for(let iSecond = 0; iSecond < i; iSecond +=1){
+        if (numbers[i] < numbers[iSecond]){
+            let position = numbers[i];
+            numbers[i] = numbers [iSecond];
+            numbers[iSecond] = position;
+        }
+    }
+}
+console.log(`Os números ${numbers} se encontram ordenados de forma crescente!`)
