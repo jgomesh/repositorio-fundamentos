@@ -87,5 +87,3 @@ const oldBooks = (item) => oldBooksOrdered(item).map((elemento) => elemento.name
 // REQUISITO 7 - ENCONTRA O AUTOR COM 3 INICIAIS NO NOME
 
 const authorWith3DotsOnName = (objeto) => objeto.filter((item) => item.author.name.replace(/[A-Z, a-z]/g, '') === '...')[0].name;
-
-console.log(authorWith3DotsOnName(books));

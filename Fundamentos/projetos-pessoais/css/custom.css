@@ -1,0 +1,17 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.logo_trybe {
+  width: 100px;
+}
+
+header {
+  width: 100%;
+  background-color: transparent;
+  transition: background ease-out 0.2s;
+}
+
+header .navbar-collapse {
+  width: auto;
+}
