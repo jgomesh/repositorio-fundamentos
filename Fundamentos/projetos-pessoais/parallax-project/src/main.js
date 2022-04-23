@@ -8,9 +8,9 @@ const text = document.getElementById('text');
 window.addEventListener('scroll', function(){
   let value = this.window.scrollY;
   clouds.style.left = value * 0.25 + 'px';
-  sun.style.top = value * 0.7 + 'px';
+  sun.style.top = value * 0.8 + 'px';
   montain.style.top = (value + 300) * 0.3 + 'px';
   forest.style.top = value * 0 + 'px';
-  text.style.right = (value + 1950)* 0.25 + 'px';
+  text.style.right = (value + 850)* 0.5 + 'px';
   btn.style.right = (value + 1950)* 0.25 + 'px';
 })
