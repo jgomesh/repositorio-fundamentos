@@ -1,3 +1,50 @@
 .App {
   text-align: center;
 }
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.mybtn {
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+  padding: 15px;
+}
+
+.mybtn:hover {
+  background-color: rgb(219, 189, 133);
+  cursor: pointer;
+}
+
+.pokemon {
+  justify-self: center;
+  max-width: 500px;
+}
+
+
+.active {
+  border: 2px double rgb(62, 143, 168);
+}
+
+.green {
+  background-color: green;
+}
+.green:hover {
+  background-color: rgb(86, 185, 86);
+}
+
+.deactive {
+  background-color: rgb(147, 172, 151);
+  border: none;
+
+}
+
+.deactive:hover {
+  cursor: auto;
+  background-color: rgb(147, 172, 151);
+}
