@@ -1,75 +1,67 @@
-import React from 'react';
+import React, { Component } from 'react'
+import './App.css'
+class Form extends Component {
+  constructor() {
+    super();
 
-  class App extends React.Component {
-    constructor() {
-      super();
+    this.handleChange = this.handleChange.bind(this);
 
-      this.state = {
-        clicksBtnOne: 0,
-        clicksBtnTwo: 0,
-        clicksBtnThree: 0,
-      };
-
-      this.handleButtonOne = this.handleButtonOne.bind(this);
-      this.handleButtonTwo = this.handleButtonTwo.bind(this);
-      this.handleButtonThree = this.handleButtonThree.bind(this);
-    }
-
-    handleButtonOne() {
-      this.setState(({ clicksBtnOne }) => ({
-        clicksBtnOne: clicksBtnOne + 1,
-      }), () => {
-        console.log(`Botão 1 ${this.getButtonColor(this.state.clicksBtnOne)}`);
-      });
-    }
-    
-    handleButtonTwo() {
-      this.setState(({ clicksBtnTwo }) => ({
-        clicksBtnTwo: clicksBtnTwo + 1,
-      }), () => {
-        console.log(`Botão 2 ${this.getButtonColor(this.state.clicksBtnTwo)}`);
-      });
-    }
-    
-    handleButtonThree() {
-      this.setState(({ clicksBtnThree }) => ({
-        clicksBtnThree: clicksBtnThree + 1,
-      }), () => {
-        // Aqui imprimimos a cor no console após o setState atualizar
-        // a quantidade de clicks no botão
-        console.log(`Botão 3 ${this.getButtonColor(this.state.clicksBtnThree)}`);
-      });
-    }
-
-    getButtonColor(num) {
-      return num % 2 === 0 ? 'green' : 'white';
-    }
-
-    render() {
-      const { clicksBtnOne, clicksBtnTwo, clicksBtnThree } = this.state;
-      return (
-        <div>
-          <button
-            onClick={ this.handleButtonOne }
-            style={{ backgroundColor: this.getButtonColor(clicksBtnOne) }}
-          >
-            Botão 1 | Count = { clicksBtnOne }
-          </button>
-          <button
-            onClick={ this.handleButtonTwo }
-            style={{ backgroundColor: this.getButtonColor(clicksBtnTwo) }}
-          >
-            Botão 2 | Count = { clicksBtnTwo }
-          </button>
-          <button
-            onClick={ this.handleButtonThree }
-            style={{ backgroundColor: this.getButtonColor(clicksBtnThree) }}
-          >
-            Botão 3 | Count = { clicksBtnThree }
-          </button>
-        </div>
-      );
-    }
+    this.state = {
+      estadoFavorito: '',
+      idade: '',
+      vaiComparecer: '',
+      files: '',
+    };
   }
 
-  export default App;
+
+  handleChange({ target }) {
+    const { name } = target;
+    let value = '';
+    if( target.type === 'checkbox') {
+      value = target.checked
+    } else if ( target.type === 'file') {
+      value = target.value
+    } else {
+      value = target.value
+    }
+  
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  render() {
+    return (
+      <div className='align'>
+        <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
+        <form className="form">
+          <fieldset>
+            <label>
+              Diga qual o seu Estado favorito! De React ou do Brasil, você decide! =)
+                <textarea name="estadoFavorito" value={this.state.estadoFavorito} onChange={this.handleChange} />
+            </label>
+            <input
+              type="number"
+              name="idade"
+              value={this.state.idade} 
+              onChange={this.handleChange}
+            />
+            <input
+              type="checkbox"
+              name="vaiComparecer"
+              value={this.state.vaiComparecer} 
+              onChange={this.handleChange}
+            />
+            <input type="file"
+            name="files" 
+            value={this.state.files} 
+            onChange={this.handleChange}/>
+          </fieldset>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default Form;

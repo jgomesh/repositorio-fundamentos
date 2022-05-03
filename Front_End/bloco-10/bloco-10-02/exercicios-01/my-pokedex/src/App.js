@@ -171,7 +171,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1> Pokedex </h1>
+        
         <Pokemon key={pokemons[this.state.numeroIndex].id} pokemon={pokemons[this.state.numeroIndex]} />
+
         <button className='mybtn active' onClick={this.allPokemons}>All</button>
         <button className='mybtn' onClick={this.eletrickPokemons}>Electric</button>
         <button className='mybtn' onClick={this.firePokemons}>Fire</button>
@@ -180,6 +182,7 @@ class App extends React.Component {
         <button className='mybtn' onClick={this.psychicPokemons}>Psychic</button>
         <button className='mybtn' onClick={this.normalPokemons}>Normal</button>
         <button className='mybtn' onClick={this.dragonPokemons}>Dragon</button>
+
         <div>
           <button className='mybtn green' onClick={this.previousPokemon}>Anterior</button>
           <button className='mybtn green' onClick={this.nextPokemon}>Próximo</button>
