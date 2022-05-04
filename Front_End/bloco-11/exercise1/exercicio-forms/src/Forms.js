@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './Forms.css';
+import React from 'react';
+import UserInputs from './UserInputs';
+import './Forms.css'
 
 function Forms() {
   return (
     <form className="form">
-      <h1>Hello world!</h1>
+      <UserInputs className='container-teste'/>
     </form>
   );
 }
