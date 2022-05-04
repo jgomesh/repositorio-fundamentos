@@ -28,7 +28,7 @@ class Forms extends React.Component {
     if(name === "nomeCompleto") value = value.toUpperCase()
     this.setState({
       [name]: value,
-    });
+    }); 
   }
 
   alertAtention(){
