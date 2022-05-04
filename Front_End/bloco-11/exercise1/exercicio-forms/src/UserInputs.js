@@ -2,16 +2,23 @@ import React from 'react';
 
 class UserInputs extends React.Component {
   render() {
-    const { value , handleChange, nomeValue} = this.props;
+    let { handleChange, nomeValue, blurFunction, cidadeValue} = this.props;
+
+    if(isNaN(parseInt(cidadeValue[0]))) {
+      console.log(cidadeValue)
+    } else {
+      cidadeValue = ''
+    }
+    
     return (
       <fieldset className='user-inputs'>
         <h1>Informações usuário</h1>
         <input type="text" name="nomeCompleto" maxlength='40' placeholder='Nome' value={nomeValue} onChange={handleChange} required/>
-        <input type="email" name="email" maxlength='50' placeholder='Email' required/>
-        <input type="text" name="cpf" maxlength='11' placeholder='CPF' required/>
-        <input type="text" name="endereço" maxlength='200' placeholder='Endereço' required/>
-        <input type="text" name="cidade" maxlength='28' placeholder='Cidade' required/>
-        <select>
+        <input type="email" name="email" maxlength='50' placeholder='Email' onChange={handleChange} required/>
+        <input type="text" name="cpf" maxlength='11' placeholder='CPF' onChange={handleChange} required/>
+        <input type="text" name="endereço" maxlength='200' placeholder='Endereço' onChange={handleChange} required/>
+        <input type="text" name="cidade" maxlength='28' placeholder='Cidade' value={cidadeValue} onBlur={blurFunction}onChange={handleChange} required/>
+        <select name='estado'onChange={handleChange}>
           <option>AC</option>
           <option>AL</option>
           <option>AP</option>
@@ -40,9 +47,9 @@ class UserInputs extends React.Component {
           <option>SE</option>
           <option>TO</option> 
         </select>
-        <div clasNanme='radio'>
+        <div name='radio'onChange={handleChange}>
           <div>
-          <input type="radio" id="casa" name="house" value="huey" required/>
+          <input type="radio" id="casa" name="house" value="casa" required/>
           <label for="casa">Casa</label>
           </div>
           <div>

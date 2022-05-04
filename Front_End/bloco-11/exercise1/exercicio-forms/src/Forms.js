@@ -8,23 +8,28 @@ class Forms extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      nomeCompleto: '',
+        nomeCompleto: "",
+        cidade: "",
+        email: "",
+        endereço: "",
+        estado: "",
+        cpf: ""
     };
   }
 
   handleChange({ target }) {
     let { name, value } = target;
-    
+    if(name === "nomeCompleto") value = value.toUpperCase()
     this.setState({
-      [name]: value.toUpperCase(),
+      [name]: value,
     });
   }
 
   render() {
-    const {nomeCompleto} = this.state
+    const {nomeCompleto, cidade} = this.state
     return (
       <form className="form">
-        <UserInputs nomeValue={nomeCompleto} handleChange={this.handleChange}/>
+        <UserInputs cidadeValue={cidade} nomeValue={nomeCompleto} handleChange={this.handleChange}/>
       </form>
     );
   }
