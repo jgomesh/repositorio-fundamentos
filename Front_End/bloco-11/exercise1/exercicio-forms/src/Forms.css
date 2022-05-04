@@ -8,3 +8,29 @@
 .form {
   margin: 50px;
 }
+
+.width100 {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.div-info {
+  display: none;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  margin: 50px 200px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main button {
+  width: 20%;
+  align-self: center;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 class UserInputs extends React.Component {
   render() {
-    let { handleChange, nomeValue, cidadeValue, alertAtention} = this.props;
+    let { handleChange, nomeValue, cidadeValue} = this.props;
 
     if(isNaN(parseInt(cidadeValue[0]))) {
       console.log(cidadeValue)
@@ -13,12 +13,12 @@ class UserInputs extends React.Component {
     return (
       <fieldset className='user-inputs'>
         <h1>Informações usuário</h1>
-        <input type="text" name="nomeCompleto" maxlength='40' placeholder='Nome' value={nomeValue} onChange={handleChange} required/>
-        <input type="email" name="email" maxlength='50' placeholder='Email' onChange={handleChange} required/>
-        <input type="text" name="cpf" maxlength='11' placeholder='CPF' onChange={handleChange} required/>
-        <input type="text" name="endereço" maxlength='200' placeholder='Endereço' onChange={handleChange} required/>
-        <input type="text" name="cidade" maxlength='28' placeholder='Cidade' value={cidadeValue} onChange={handleChange} required/>
-        <select name='estado'onChange={handleChange}>
+        <input className='width100' type="text" name="nomeCompleto" maxlength='40' placeholder='Nome' value={nomeValue} onChange={handleChange} required/>
+        <input className='width100' type="email" name="email" maxlength='50' placeholder='Email' onChange={handleChange} required/>
+        <input className='width100' type="text" name="cpf" maxlength='11' placeholder='CPF' onChange={handleChange} required/>
+        <input className='width100' type="text" name="endereço" maxlength='200' placeholder='Endereço' onChange={handleChange} required/>
+        <input className='width100' type="text" name="cidade" maxlength='28' placeholder='Cidade' value={cidadeValue} onChange={handleChange} required/>
+        <select className='width100' name='estado'onChange={handleChange}>
           <option>AC</option>
           <option>AL</option>
           <option>AP</option>
@@ -47,7 +47,7 @@ class UserInputs extends React.Component {
           <option>SE</option>
           <option>TO</option> 
         </select>
-        <div name='radio'onChange={handleChange}>
+        <div className='width100' name='radio'onChange={handleChange}>
           <div>
           <input type="radio" id="casa" name="house" value="casa" required/>
           <label for="casa">Casa</label>
