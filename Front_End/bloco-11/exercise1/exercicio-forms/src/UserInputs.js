@@ -1,18 +1,17 @@
 import React from 'react';
 
 class UserInputs extends React.Component {
-  constructor() {
-    super()
-  }
-
   render() {
+    const { value , handleChange, nomeValue} = this.props;
     return (
       <fieldset className='user-inputs'>
         <h1>Informações usuário</h1>
-        <input type="text" name="" id="" maxlength='40'placeholder='Nome' required/>
-        <input type="email" name="" id="" maxlength='50' placeholder='Email' required/>
-        <input type="text" name="" id="" maxlength='11'placeholder='CPF' required/>
-        <select >
+        <input type="text" name="nomeCompleto" maxlength='40' placeholder='Nome' value={nomeValue} onChange={handleChange} required/>
+        <input type="email" name="email" maxlength='50' placeholder='Email' required/>
+        <input type="text" name="cpf" maxlength='11' placeholder='CPF' required/>
+        <input type="text" name="endereço" maxlength='200' placeholder='Endereço' required/>
+        <input type="text" name="cidade" maxlength='28' placeholder='Cidade' required/>
+        <select>
           <option>AC</option>
           <option>AL</option>
           <option>AP</option>
@@ -41,15 +40,16 @@ class UserInputs extends React.Component {
           <option>SE</option>
           <option>TO</option> 
         </select>
-        <div>
-        <input type="radio" id="casa" name="house" value="huey" required/>
-        <label for="casa">Casa</label>
-        </div>
-        <div>
-        <input type="radio" id="apartamento" name="house" value="apartamento"/>
-        <label for="casa">Apartamento</label>
-        </div>
-        
+        <div clasNanme='radio'>
+          <div>
+          <input type="radio" id="casa" name="house" value="huey" required/>
+          <label for="casa">Casa</label>
+          </div>
+          <div>
+          <input type="radio" id="apartamento" name="house" value="apartamento"/>
+          <label for="casa">Apartamento</label>
+          </div>
+        </div> 
       </fieldset>
     )
   }
