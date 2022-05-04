@@ -2,10 +2,9 @@ import React from 'react';
 
 class UserInputs extends React.Component {
   render() {
-    let { handleChange, nomeValue, cidadeValue} = this.props;
+    let { handleChange, nomeValue, cidadeValue, emailValue, cpfValue, endereçoValue} = this.props;
 
     if(isNaN(parseInt(cidadeValue[0]))) {
-      console.log(cidadeValue)
     } else {
       cidadeValue = ''
     }
@@ -13,11 +12,11 @@ class UserInputs extends React.Component {
     return (
       <fieldset className='user-inputs'>
         <h1>Informações usuário</h1>
-        <input className='width100' type="text" name="nomeCompleto" maxlength='40' placeholder='Nome' value={nomeValue} onChange={handleChange} required/>
-        <input className='width100' type="email" name="email" maxlength='50' placeholder='Email' onChange={handleChange} required/>
-        <input className='width100' type="text" name="cpf" maxlength='11' placeholder='CPF' onChange={handleChange} required/>
-        <input className='width100' type="text" name="endereço" maxlength='200' placeholder='Endereço' onChange={handleChange} required/>
-        <input className='width100' type="text" name="cidade" maxlength='28' placeholder='Cidade' value={cidadeValue} onChange={handleChange} required/>
+        <input className='width100' type="text" name="nomeCompleto" maxLength='40' placeholder='Nome' value={nomeValue} onChange={handleChange} required/>
+        <input className='width100' type="email" name="email" maxLength='50' placeholder='Email' value={emailValue} onChange={handleChange} required/>
+        <input className='width100' type="text" name="cpf" maxLength='15' placeholder='CPF' value={cpfValue} onChange={handleChange} required/>
+        <input className='width100' type="text" name="endereço" maxLength='200' placeholder='Endereço' value={endereçoValue} onChange={handleChange} required/>
+        <input className='width100' type="text" name="cidade" maxLength='28' placeholder='Cidade' value={cidadeValue} onChange={handleChange} required/>
         <select className='width100' name='estado'onChange={handleChange}>
           <option>AC</option>
           <option>AL</option>
@@ -49,12 +48,12 @@ class UserInputs extends React.Component {
         </select>
         <div className='width100' name='radio'onChange={handleChange}>
           <div>
-          <input type="radio" id="casa" name="house" value="casa" required/>
-          <label for="casa">Casa</label>
+            <input type="radio" id="casa" className='selected' name="house" value="casa" required/>
+            <label htmlFor="casa">Casa</label>
           </div>
           <div>
-          <input type="radio" id="apartamento" name="house" value="apartamento"/>
-          <label for="casa">Apartamento</label>
+            <input type="radio" className='selected' id="apartamento" name="house" value="apartamento"/>
+            <label htmlFor="casa">Apartamento</label>
           </div>
         </div> 
       </fieldset>
