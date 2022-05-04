@@ -1,20 +1,26 @@
 import React from 'react';
 import UserInputs from './UserInputs';
+import LastJob from './LastJob';
 import './Forms.css'
 
 class Forms extends React.Component {
   constructor() {
     super()
     this.handleChange = this.handleChange.bind(this);
+    this.alertAtention = this.alertAtention.bind(this);
 
     this.state = {
-        nomeCompleto: "",
-        cidade: "",
-        email: "",
-        endereço: "",
-        estado: "",
-        cpf: ""
-    };
+      cargo: "",
+      cidade: "",
+      cpf: "",
+      descrição: "",
+      email: "",
+      endereço: "",
+      estado: "",
+      house: "",
+      nomeCompleto: "",
+      resume: "",
+      };
   }
 
   handleChange({ target }) {
@@ -25,11 +31,15 @@ class Forms extends React.Component {
     });
   }
 
+  alertAtention(){
+    alert('Preencha com cuidado esta informação.');
+  }
   render() {
     const {nomeCompleto, cidade} = this.state
     return (
       <form className="form">
         <UserInputs cidadeValue={cidade} nomeValue={nomeCompleto} handleChange={this.handleChange}/>
+        <LastJob alertAtention={this.alertAtention} handleChange={this.handleChange}/>
       </form>
     );
   }

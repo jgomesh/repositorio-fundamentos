@@ -2,14 +2,14 @@ import React from 'react';
 
 class UserInputs extends React.Component {
   render() {
-    let { handleChange, nomeValue, blurFunction, cidadeValue} = this.props;
+    let { handleChange, nomeValue, cidadeValue, alertAtention} = this.props;
 
     if(isNaN(parseInt(cidadeValue[0]))) {
       console.log(cidadeValue)
     } else {
       cidadeValue = ''
     }
-    
+
     return (
       <fieldset className='user-inputs'>
         <h1>Informações usuário</h1>
@@ -17,7 +17,7 @@ class UserInputs extends React.Component {
         <input type="email" name="email" maxlength='50' placeholder='Email' onChange={handleChange} required/>
         <input type="text" name="cpf" maxlength='11' placeholder='CPF' onChange={handleChange} required/>
         <input type="text" name="endereço" maxlength='200' placeholder='Endereço' onChange={handleChange} required/>
-        <input type="text" name="cidade" maxlength='28' placeholder='Cidade' value={cidadeValue} onBlur={blurFunction}onChange={handleChange} required/>
+        <input type="text" name="cidade" maxlength='28' placeholder='Cidade' value={cidadeValue} onChange={handleChange} required/>
         <select name='estado'onChange={handleChange}>
           <option>AC</option>
           <option>AL</option>
