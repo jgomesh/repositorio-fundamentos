@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, { Component } from 'react';
+import './App.css';
+import Estado from './Estado.js';
+import Idade from './Idade'
+
 class Form extends Component {
   constructor() {
     super();
@@ -11,9 +14,24 @@ class Form extends Component {
       idade: '',
       vaiComparecer: '',
       files: '',
+      formularioComErros: false ,
     };
   }
 
+  handleError() {
+    const { estadoFavorito, idade} = this.state;
+
+    const errorCases = [
+      (estadoFavorito.length > 15),
+      (idade > 100),
+    ];
+
+    const formularioPreenchido = errorCases.every((error) => error === false);
+
+    this.setState({
+      formularioComErros: !formularioPreenchido,
+    });
+  }
 
   handleChange({ target }) {
     const { name } = target;
@@ -28,25 +46,19 @@ class Form extends Component {
   
     this.setState({
       [name]: value,
-    });
+    }, () => { this.handleError(); });
   }
 
+
   render() {
+    const {estadoFavorito, idade, formularioComErros } = this.state
     return (
       <div className='align'>
         <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
         <form className="form">
           <fieldset>
-            <label>
-              Diga qual o seu Estado favorito! De React ou do Brasil, você decide! =)
-                <textarea name="estadoFavorito" value={this.state.estadoFavorito} onChange={this.handleChange} />
-            </label>
-            <input
-              type="number"
-              name="idade"
-              value={this.state.idade} 
-              onChange={this.handleChange}
-            />
+            <Estado value ={estadoFavorito}handleChange={this.handleChange}/>
+            <Idade value ={idade} handleChange={this.handleChange}/>
             <input
               type="checkbox"
               name="vaiComparecer"
@@ -59,6 +71,9 @@ class Form extends Component {
             onChange={this.handleChange}/>
           </fieldset>
         </form>
+        { formularioComErros
+            ? <span style={ { color: 'red' } }>Tem algum erro no seu formulário</span>
+            : <span style={ { color: 'green' } }>Tudo correto!</span> }
       </div>
     );
   }
