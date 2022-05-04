@@ -18,7 +18,7 @@ class Idade extends React.Component {
         <span>{error ? error : ''}</span>
       </label>
     )
-    
+
   }
 }
 
