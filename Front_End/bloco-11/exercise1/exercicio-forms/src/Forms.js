@@ -3,6 +3,7 @@ import UserInputs from './UserInputs';
 import LastJob from './LastJob';
 import './Forms.css'
 
+let teste = '';
 class Forms extends React.Component {
   constructor() {
     super()
@@ -22,10 +23,19 @@ class Forms extends React.Component {
       resume: "",
       };
   }
-
+ 
+  
   handleChange({ target }) {
     let { name, value } = target;
     if(name === "nomeCompleto") value = value.toUpperCase()
+    if(name === 'email') {
+      const isValid = value.match(/^([\w.]+)@([\w]+\.)+([\w]{3})/)
+      if(!isValid) {
+        teste = 'Email inválido!'
+      } else {
+        teste = ''
+      }
+    }
     this.setState({
       [name]: value,
     }); 
@@ -54,6 +64,7 @@ class Forms extends React.Component {
       resume: "",
       }
     )
+    teste = ''
     const allOptions = document.querySelectorAll('.selected');
     const divInfo = document.querySelector('.div-info');
     divInfo.style.display= 'none';
@@ -66,6 +77,9 @@ class Forms extends React.Component {
       <main>
       <form className="form">
         <UserInputs cpfValue={cpf} cidadeValue={cidade} endereçoValue={endereço} nomeValue={nomeCompleto} emailValue={email}handleChange={this.handleChange}/>
+        <div className='text-center'>
+          <span className='error'>{teste}</span>
+        </div>
         <LastJob describe={descrição} resumo={resume} cargoo={cargo} alertAtention={this.alertAtention} handleChange={this.handleChange}/>
       </form>
       <button onClick={this.criaCurriculum}>Criar Currículo</button>
