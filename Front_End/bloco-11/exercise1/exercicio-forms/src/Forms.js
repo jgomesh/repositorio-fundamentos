@@ -81,9 +81,9 @@ class Forms extends React.Component {
           <span className='error'>{error}</span>
         </div>
         <LastJob describe={descrição} resumo={resume} cargoo={cargo} alertAtention={this.alertAtention} handleChange={this.handleChange}/>
+        <button onClick={this.criaCurriculum}>Criar Currículo</button>
+        <button onClick={this.deleteAll}>Apaga</button>
       </form>
-      <button onClick={this.criaCurriculum}>Criar Currículo</button>
-      <button onClick={this.deleteAll}>Apaga</button>
       <br/>
       <div className='div-info'>
         <h3>User info</h3>
