@@ -4,7 +4,6 @@ class LastJob extends React.Component {
   render() {
     const { handleChange, alertAtention, resumo, cargoo, describe} = this.props;
 
-    
     return (
       <fieldset className='user-inputs'>
         <h1>Ultimo emprego</h1>
