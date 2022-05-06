@@ -1,4 +1,5 @@
 import React from 'react';
+import LogBoy from './LogBoy';
 import UserInputs from './UserInputs';
 import LastJob from './LastJob';
 import './Forms.css'
@@ -10,6 +11,7 @@ class Forms extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.alertAtention = this.alertAtention.bind(this);
     this.deleteAll = this.deleteAll.bind(this);
+    this.criaCurriculum = this.criaCurriculum.bind(this);
     this.state = {
       cargo: "",
       cidade: "",
@@ -21,6 +23,7 @@ class Forms extends React.Component {
       house: "",
       nomeCompleto: "",
       resume: "",
+      submit: true,
       };
   }
  
@@ -45,9 +48,11 @@ class Forms extends React.Component {
     alert('Preencha com cuidado esta informação.');
   }
 
-  criaCurriculum({target}){
-    const divInfo = document.querySelector('.div-info');
-    divInfo.style.display= 'flex';
+  criaCurriculum(event){
+    event.preventDefault();
+    this.setState({
+      submit: true,
+      })
   }
 
   deleteAll() {
@@ -62,21 +67,19 @@ class Forms extends React.Component {
       house: "",
       nomeCompleto: "",
       resume: "",
+      submit: false,
       }
     )
-    teste = ''
-    const allOptions = document.querySelectorAll('.selected');
-    const divInfo = document.querySelector('.div-info');
-    divInfo.style.display= 'none';
-    allOptions.forEach((element) => element.checked = false)
+    error = ''
+
   }
 
   render() {
-    const {nomeCompleto, cidade, email, cpf, endereço, house, estado, descrição, cargo, resume} = this.state;
+    const {nomeCompleto, cidade, email, cpf, endereço, descrição, cargo, resume, estado, house, submit} = this.state;
     return (
       <main>
       <form className="form">
-        <UserInputs cpfValue={cpf} cidadeValue={cidade} endereçoValue={endereço} nomeValue={nomeCompleto} emailValue={email}handleChange={this.handleChange}/>
+        <UserInputs cpfValue={cpf} cidadeValue={cidade} endereçoValue={endereço} nomeValue={nomeCompleto} emailValue={email} handleChange={this.handleChange}/>
         <div className='text-center'>
           <span className='error'>{error}</span>
         </div>
@@ -85,20 +88,7 @@ class Forms extends React.Component {
         <button onClick={this.deleteAll}>Apaga</button>
       </form>
       <br/>
-      <div className='div-info'>
-        <h3>User info</h3>
-        Nome: {nomeCompleto}<br/>
-        Email: {email}<br/>
-        Cpf: {cpf}<br/>
-        Endereço: {endereço}<br/>
-        Cidade: {cidade}<br/>
-        Estado: {estado}<br/>
-        Moradia: {house}<br/>
-        <h3>Currículo</h3>
-        Descrição: {descrição}<br/>
-        Cargo: {cargo}<br/>
-        Resumo: {resume}<br/>
-      </div>
+      {submit && <LogBoy describe={descrição} estado={estado} house={house} resumo={resume} cargoo={cargo} cpfValue={cpf} cidadeValue={cidade} endereçoValue={endereço} nomeValue={nomeCompleto} emailValue={email}/>}
       </main>
     );
   }
