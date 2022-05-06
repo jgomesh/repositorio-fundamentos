@@ -5,7 +5,7 @@ class DadJoke extends React.Component {
     super();
 
     this.saveJoke = this.saveJoke.bind(this);
-
+    this.renderJokeElement = this.renderJokeElement.bind(this);
     this.state = {
       jokeObj: undefined,
       loading: true,
