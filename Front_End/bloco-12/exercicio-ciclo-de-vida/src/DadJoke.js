@@ -57,9 +57,9 @@ class DadJoke extends React.Component {
           {storedJokes.map((item, id) => (<p key={id}>{item}</p>))}
           {this.state.loading && loadingElement}
         </span><br/>
-        <button type='button' onClick={this.saveJoke}>
+        {this.state.loading === false && <button type='button' onClick={this.saveJoke}>
           Salvar piada!
-        </button>
+        </button>}
       </div>
     );
   }
