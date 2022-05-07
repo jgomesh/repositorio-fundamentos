@@ -18,25 +18,31 @@ class DadJoke extends React.Component {
     const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
     const requestObject = await requestReturn.json();
     this.setState({
-      jokeObj: requestObject,
+      jokeObj: requestObject, 
     })
   }
 
-  componentDidMount() {
-    this.fetchJoke();
+ componentDidMount() {
+    this.saveJoke()
   }
 
-  saveJoke() {
+  async saveJoke() {
+    this.setState({
+      loading: true,
+  })
     //Esse método será responsável por salvar a piada no array de piadas storedJokes!!
+    await this.fetchJoke();
+    const joke = this.renderJokeElement()
+    this.state.storedJokes.push(joke)
+    this.setState({
+      loading: false,
+    })
   }
 
   renderJokeElement() {
     return (
       <div>
-        <p>{this.state.jokeObjs.joke}</p>
-        <button type='button' onClick='this.saveJoke'>
-          Salvar piada!
-        </button>
+        <p>{this.state.jokeObj.joke}</p>
       </div>
     );
   }
@@ -48,11 +54,12 @@ class DadJoke extends React.Component {
     return (
       <div>
         <span>
-          {storedJokes.map(({ id, joke }) => (<p key={id}>{joke}</p>))}
-        </span>
-
-        <span>RENDERIZAÇÂO CONDICIONAL!</span>
-
+          {storedJokes.map((item, id) => (<p key={id}>{item}</p>))}
+          {this.state.loading && loadingElement}
+        </span><br/>
+        {this.state.loading === false && <button type='button' onClick={this.saveJoke}>
+          Salvar piada!
+        </button>}
       </div>
     );
   }
