@@ -1,11 +1,14 @@
 import React from 'react'
 import './App.css';
+import User from './User'
 
 class App extends React.Component {
   constructor() {
     super();
     this.componentDidMount = this.componentDidMount.bind(this);
     this.state = {
+      loading: true,
+      loadingElement: 'Carregando...',
       api: {
         dob: {age:''},
         name:{first: '', last: ''},
@@ -13,20 +16,20 @@ class App extends React.Component {
       },
     };
   }
-
   async componentDidMount() {
+    this.setState({ loading: true});
     try {
       const url = `https://api.randomuser.me/`;
-      const response = await fetch(url)
-      const dataJson = await response.json()
-      this.setState({ api: dataJson.results[0]})
+      const response = await fetch(url);
+      const dataJson = await response.json();
+      this.setState({ api: dataJson.results[0]});
+      this.setState({ loading: false});
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
-
   shouldComponentUpdate(_nextProps, nextState){
-    const { email, dob: { age } } = nextState.api
+    let { email, dob: { age } } = nextState.api
     let result;
     if(parseInt(age) < 50) {
       console.log('menor que 50')
@@ -34,9 +37,6 @@ class App extends React.Component {
       console.log(email)
       result =  true;
     } else {
-      alert('próximo usuario maior que 50')
-      console.log(age)
-      console.log(email)
       result =  false;
     }
     return result;
@@ -45,13 +45,11 @@ class App extends React.Component {
   //foto, nome, email e idade do usuário.
   render() {
     const { email, name: { first, last }, picture: {medium}, dob: { age }} = this.state.api
+    const {loading , loadingElement} = this.state
     return (
       <div className="body">
-        <img src={medium} alt='Foto de perfil'/><br/>
-        Email: {email}.<br/>
-        Name: {`${first} ${last}`}.<br/>
-        Age: {age}<br/>
-        <button onClick={this.componentDidMount}>Change</button>
+        {loading ? loadingElement: null}<br/>
+        {loading === false && <User email={email} name={`${first} ${last}`} image={medium} age={age}/>}
       </div>
     );
   }
