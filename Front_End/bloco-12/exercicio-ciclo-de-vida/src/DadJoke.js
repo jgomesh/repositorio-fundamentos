@@ -29,8 +29,8 @@ class DadJoke extends React.Component {
   async saveJoke() {
     this.setState({
       loading: true,
-  })
-    //Esse método será responsável por salvar a piada no array de piadas storedJokes!!
+    })
+    //Esse método serlsá responsável por salvar a piada no array de piadas storedJokes!!
     await this.fetchJoke();
     const joke = this.renderJokeElement()
     this.state.storedJokes.push(joke)
