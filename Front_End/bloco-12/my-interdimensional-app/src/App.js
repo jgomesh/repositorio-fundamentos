@@ -1,44 +1,43 @@
-// App.js
-import React, { Component }from 'react';
+// src/App.js
+import React from 'react';
 import './App.css';
+import Profile from './Profile';
+import Connections from './Connections';
 
-class App extends Component {
-  constructor(props){
-    super(props);
+class App extends React.Component {
+  constructor() {
+    // 💡 me preencha!
+    super();
+
     this.state = {
-        characters: [],
+      showProfile: true,
     };
-  }
-  
-  fetchCharacters = () => {
-    fetch('https://rickandmortyapi.com/api/character')
-    .then(response => response.json())
-    .then(data => {
-      this.setState({characters: data.results})
-    })
+
+    this.changeProfile = this.changeProfile.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchCharacters();
+  changeProfile() {
+    const { showProfile } = this.state;
+
+    this.setState({ showProfile: !showProfile });
   }
 
   render() {
-    const { characters } = this.state;
+    // 💡 está faltando algo aqui!
+    const { showProfile } = this.state;
     return (
-      <div className="App">
-        <h1>
-          Ricky and Morty Characters:
-        </h1>
-        <div className="body">
-          {characters.map(({ name, image }) => {
-            return (
-              <div className="container" key={name}>
-                <h3>{name}</h3>
-                <img src={image} alt={name}/>
-              </div>
-            )
-          })}
+      <div className="gitNetwork d-flex flex-column justify-content-center">
+        { showProfile ? <Profile /> : null }
+        <div className="central d-flex justify-content-center">
+          <button
+            className="btn btn-dark align-self-center"
+            type="button"
+            onClick={ this.changeProfile }
+          >
+            Mostrar / Ocultar Perfil
+          </button>
         </div>
+        <Connections />
       </div>
     );
   }
