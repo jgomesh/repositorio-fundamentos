@@ -4,9 +4,13 @@ import './App.css';
 class App extends React.Component {
   constructor() {
     super();
-
+    this.componentDidMount = this.componentDidMount.bind(this);
     this.state = {
-      api: '',
+      api: {
+        dob: {age:''},
+        name:{first: '', last: ''},
+        picture: {medium: ''},
+      },
     };
   }
 
@@ -20,17 +24,34 @@ class App extends React.Component {
       console.log(error)
     }
   }
-  //const c = {teste1:{teste2:{teste3:1}}}
-  //const {teste1:{teste2:{teste3}}} = c;
-  //console.log(teste3);
+
+  shouldComponentUpdate(_nextProps, nextState){
+    const { email, dob: { age } } = nextState.api
+    let result;
+    if(parseInt(age) < 50) {
+      console.log('menor que 50')
+      console.log(age)
+      console.log(email)
+      result =  true;
+    } else {
+      alert('próximo usuario maior que 50')
+      console.log(age)
+      console.log(email)
+      result =  false;
+    }
+    return result;
+  }
+
+  //foto, nome, email e idade do usuário.
   render() {
-
-    const { email, dob: { age }} = this.state.api
-
+    const { email, name: { first, last }, picture: {medium}, dob: { age }} = this.state.api
     return (
-      <div className="body">  
-        Email: {email}<br/>
-        {age}
+      <div className="body">
+        <img src={medium} alt='Foto de perfil'/><br/>
+        Email: {email}.<br/>
+        Name: {`${first} ${last}`}.<br/>
+        Age: {age}<br/>
+        <button onClick={this.componentDidMount}>Change</button>
       </div>
     );
   }
