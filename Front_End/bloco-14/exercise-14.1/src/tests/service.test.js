@@ -1,5 +1,5 @@
-const services = require('../services/service');
-jest.mock('../services/service');
+const services = require('../services/services');
+jest.mock('../services/services');
 
 
 describe('Aprendendo sobre mocks', () => {
@@ -19,7 +19,7 @@ describe('Aprendendo sobre mocks', () => {
     expect(result).toBe(2);
   });
 
-  it('Teste de sobrescrição', () => {
+  it('Teste de sobrescrição 2', () => {
     services.randomHundredNumber.mockClear();
     services.randomHundredNumber.mockImplementation((a , b, c) => ( a * b * c ));
     const result = services.randomHundredNumber(10, 5, 10);

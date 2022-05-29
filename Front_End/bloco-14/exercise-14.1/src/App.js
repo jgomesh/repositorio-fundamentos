@@ -1,7 +1,16 @@
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
-
+import { fetchRandomDog } from './services/services';
 class App extends React.Component {
+  state = {
+    dog: {},
+  }
+
+  async componentDidMount() {
+    const dog = await fetchRandomDog()
+    this.setState({ dog: dog})
+  }
   render() {
     return (
       <div className="App">
