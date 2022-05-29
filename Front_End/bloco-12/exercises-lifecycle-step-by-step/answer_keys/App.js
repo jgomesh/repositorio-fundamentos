@@ -1,12 +1,11 @@
-// src/App.js
 import React from 'react';
 import './App.css';
-import Profile from './Profile';
-import Connections from './Connections';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Profile from './components/Profile';
+import Connections from './components/Connections';
 
 class App extends React.Component {
   constructor() {
-    // 💡 me preencha!
     super();
 
     this.state = {
@@ -23,8 +22,8 @@ class App extends React.Component {
   }
 
   render() {
-    // 💡 está faltando algo aqui!
     const { showProfile } = this.state;
+
     return (
       <div className="gitNetwork d-flex flex-column justify-content-center">
         { showProfile ? <Profile /> : null }
@@ -44,3 +43,4 @@ class App extends React.Component {
 }
 
 export default App;
+
