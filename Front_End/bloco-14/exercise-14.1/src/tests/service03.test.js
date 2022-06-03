@@ -6,7 +6,7 @@ describe("testando a requisição", () => {
   test("testando requisição caso a promise resolva", async () => {
     service.fetchRandomDog.mockResolvedValue("request success");
 
-    service.fetchRandomDog();
+    service.fetchRandom();
     expect(service.fetchRandomDog).toHaveBeenCalled();
     expect(service.fetchRandomDog).toHaveBeenCalledTimes(1);
     await expect(service.fetchRandomDog()).resolves.toBe("request success");

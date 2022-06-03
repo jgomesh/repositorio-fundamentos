@@ -16,8 +16,7 @@ const concatanateString = (string, string2) => {
 
 
 function fetchRandomDog() {
-  return fetch("https://dog.ceo/api/breeds/image/random")
-  .then(response =>
+  return fetch("https://dog.ceo/api/breeds/image/random").then(response =>
     response
       .json()
       .then(json =>
