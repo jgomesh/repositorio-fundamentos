@@ -1,6 +1,7 @@
 const Initial_State = {
   counter: 0,
 };
+
 function clickReducer(state = Initial_State, action) {
   switch (action.type) {
     case 'ADD_CLICK':
@@ -9,4 +10,5 @@ function clickReducer(state = Initial_State, action) {
       return state;
   }
 }
+
 export default clickReducer;

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 const renderWithRedux = (
   component,
-  { initialState, store = createStore(combineReducers({ clickReducer })) } = {}
+  { initialState, store = createStore(combineReducers({ clickReducer }), initialState) } = {}
 ) => {
   return {
     ...render(<Provider store={store}>{component}</Provider>),
